@@ -1,49 +1,669 @@
-# About AuthFlow
 
-### Technology made easier to understand.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b0b14">
+    <title>About AuthFlow</title>
 
-AuthFlow is an educational web project designed to demonstrate the fundamentals of web authentication and interactive computing.
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-The purpose of this website is to help students and visitors understand how modern websites manage user accounts, authentication and digital logic through practical demonstrations.
+        :root {
+            --bg: #0b0b14;
+            --panel: #131321;
+            --panel2: #19192b;
+            --text: #f4f1ff;
+            --muted: #a5a2b8;
+            --accent: #9b7bff;
+            --accent2: #7048eb;
+            --border: rgba(255,255,255,0.09);
+        }
 
-### What does this website offer?
+        body {
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
 
-**AuthFlow**
+        .layout {
+            display: grid;
+            grid-template-columns: 245px 1fr;
+            min-height: 100vh;
+        }
 
-- Email and password authentication.
-- Google sign-in option.
-- Password recovery.
-- A personalized dashboard.
-- A responsive and interactive user interface.
+        /* SIDEBAR */
 
-**Logic Lab**
+        .sidebar {
+            background: #10101c;
+            border-right: 1px solid var(--border);
+            padding: 28px 18px;
+        }
 
-- Interactive simulation of seven digital logic gates.
-- Truth tables for understanding gate operations.
-- Number-system conversion between binary, octal, decimal and hexadecimal.
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            margin-bottom: 45px;
+            padding-left: 10px;
+        }
 
-### Our Teachers, Our Inspiration
+        .brand-icon {
+            background: linear-gradient(135deg, #a78bfa, #7048eb);
+            padding: 9px 11px;
+            border-radius: 10px;
+        }
 
-This project was made possible with the guidance, encouragement and cooperation of our teachers.
+        .nav-label {
+            color: #77758c;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin: 25px 10px 12px;
+        }
 
-Their valuable support helped us understand the concepts, plan the project and bring our ideas into practice.
+        .nav a {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 13px;
+            margin: 5px 0;
+            color: var(--muted);
+            text-decoration: none;
+            border-radius: 10px;
+            transition: .25s;
+            font-size: 14px;
+        }
 
-We sincerely thank our teachers for their guidance and motivation throughout this project.
+        .nav a:hover,
+        .nav a.active {
+            background: rgba(139,92,246,.15);
+            color: white;
+        }
 
-### Project Credits
+        .nav a.active {
+            border-left: 3px solid var(--accent);
+        }
 
-- **Created and developed by:** [Your Name]
-- **Project guidance:** [Teacher's Name]
-- **Additional guidance:** [Teacher's Name]
-- **School:** [School Name]
-- **Class and section:** [Class / Section]
-- **Presented at:** Science Exhibition 2026
-- **Academic session:** [Academic Year]
+        .sidebar-note {
+            margin-top: 45px;
+            padding: 16px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            color: var(--muted);
+            font-size: 12px;
+            line-height: 1.6;
+        }
 
-### Technology Stack
+        /* MAIN CONTENT */
 
-HTML · CSS · JavaScript · Supabase · GitHub · Netlify
+        .main {
+            padding: 55px 7%;
+            max-width: 1250px;
+            width: 100%;
+            margin: 0 auto;
+        }
 
-*Built with curiosity, creativity and a passion for learning.*
+        .tag {
+            display: inline-block;
+            background: rgba(155,123,255,.13);
+            color: #bba8ff;
+            border: 1px solid rgba(155,123,255,.25);
+            padding: 8px 14px;
+            border-radius: 30px;
+            font-size: 12px;
+            margin-bottom: 22px;
+        }
 
-**AuthFlow — Your project, your flow.**
+        h1 {
+            font-size: clamp(34px, 5vw, 53px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .gradient {
+            background: linear-gradient(90deg, #bba8ff, #8c63ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-description {
+            color: var(--muted);
+            line-height: 1.9;
+            max-width: 720px;
+            font-size: 16px;
+        }
+
+        .section {
+            margin-top: 65px;
+        }
+
+        .section h2 {
+            font-size: 27px;
+            margin-bottom: 16px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            line-height: 1.8;
+            max-width: 750px;
+        }
+
+        /* FEATURE CARDS */
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 25px;
+            transition: .25s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(155,123,255,.5);
+        }
+
+        .card-icon {
+            font-size: 27px;
+            margin-bottom: 18px;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .feature-list {
+            margin-top: 16px;
+            padding-left: 20px;
+            color: #c8c3dd;
+            line-height: 2;
+            font-size: 13px;
+        }
+
+        /* TEACHER ACKNOWLEDGEMENT */
+
+        .acknowledgement {
+            background: linear-gradient(
+                135deg,
+                rgba(112,72,235,.15),
+                rgba(155,123,255,.05)
+            );
+            border: 1px solid rgba(155,123,255,.25);
+            border-radius: 18px;
+            padding: 30px;
+            margin-top: 25px;
+            line-height: 1.9;
+            color: #c8c3dd;
+        }
+
+        .acknowledgement h3 {
+            color: white;
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        /* CREDITS */
+
+        .credits {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-top: 25px;
+            padding: 25px;
+        }
+
+        .credit-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 17px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .credit-row:last-child {
+            border-bottom: none;
+        }
+
+        .credit-label {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .credit-value {
+            color: #d5c9ff;
+            text-align: right;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .placeholder {
+            color: #b49aff;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .tech {
+            background: var(--panel2);
+            padding: 11px 16px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: #d2c6ff;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            margin-top: 75px;
+            padding-top: 25px;
+            color: #77758c;
+            font-size: 13px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .footer-brand {
+            color: #b49aff;
+            font-weight: bold;
+        }
+
+        .action-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #9b7bff, #7048eb);
+            color: white;
+            padding: 13px 21px;
+            border-radius: 10px;
+            text-decoration: none;
+            margin-top: 25px;
+            font-size: 14px;
+            transition: .2s;
+        }
+
+        .action-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(112,72,235,.3);
+        }
+
+        @media(max-width: 800px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 18px;
+            }
+
+            .brand {
+                margin-bottom: 18px;
+            }
+
+            .nav-label,
+            .sidebar-note {
+                display: none;
+            }
+
+            .nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+
+            .nav a {
+                padding: 10px;
+                font-size: 12px;
+            }
+
+            .main {
+                padding: 35px 22px;
+            }
+
+            .section {
+                margin-top: 45px;
+            }
+        }
+
+        @media(max-width: 540px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .credit-row {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .credit-value {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="layout">
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-icon">A</span>
+            AuthFlow
+        </a>
+
+        <p class="nav-label">MAIN MENU</p>
+
+        <nav class="nav">
+
+            <a href="index.html">
+                <span>⌂</span> Home
+            </a>
+
+            <a href="dashboard.html">
+                <span>▦</span> Dashboard
+            </a>
+
+            <a href="logic.html">
+                <span>⌘</span> Logic Lab
+            </a>
+
+            <a href="about.html" class="active"
+               aria-current="page">
+                <span>ⓘ</span> About AuthFlow
+            </a>
+
+            <a href="contact.html">
+                <span>✉</span> Contact
+            </a>
+
+            <!-- Add your LinkedIn link here later -->
+
+        </nav>
+
+        <div class="sidebar-note">
+            <strong>Learning Through Technology</strong>
+            <p>Explore, experiment and understand how technology works.</p>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="main">
+
+        <header>
+            <span class="tag">ABOUT THE PROJECT</span>
+
+            <h1>
+                Technology made easier
+                <span class="gradient">to understand.</span>
+            </h1>
+
+            <p class="hero-description">
+                Welcome to AuthFlow! This website is an educational
+                project created to demonstrate the fundamentals of
+                web authentication and digital logic through
+                interactive experiences.
+                Our aim is to make learning technology practical,
+                interesting and easier to understand.
+            </p>
+        </header>
+
+
+        <!-- PURPOSE -->
+
+        <section class="section">
+
+            <h2>Our Purpose</h2>
+
+            <p class="section-description">
+                The main purpose of AuthFlow is to introduce visitors
+                to the concepts behind modern websites and digital
+                computing. Instead of only reading about these
+                concepts, visitors can interact with the features
+                and observe how they work.
+                This project combines web development with basic
+                computer science concepts in one place.
+            </p>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="section">
+
+            <h2>What Does This Website Offer?</h2>
+
+            <p class="section-description">
+                AuthFlow brings together two educational components.
+            </p>
+
+            <div class="feature-grid">
+
+                <div class="card">
+
+                    <div class="card-icon">🔐</div>
+
+                    <h3>AuthFlow</h3>
+
+                    <p>
+                        An authentication demonstration that
+                        introduces how websites manage user
+                        accounts and access.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>Email and password authentication</li>
+                        <li>Google sign-in</li>
+                        <li>Password recovery</li>
+                        <li>Personalized dashboard</li>
+                        <li>User session management</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-icon">💡</div>
+
+                    <h3>Logic Lab</h3>
+
+                    <p>
+                        An interactive learning space for
+                        understanding digital logic and
+                        number systems.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>Seven digital logic gates</li>
+                        <li>Interactive gate simulations</li>
+                        <li>Truth tables</li>
+                        <li>Binary conversions</li>
+                        <li>Octal, decimal and hexadecimal conversions</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+            <a href="logic.html" class="action-link">
+                Explore Logic Lab →
+            </a>
+
+        </section>
+
+
+        <!-- ACKNOWLEDGEMENT -->
+
+        <section class="section">
+
+            <h2>Acknowledgements</h2>
+
+            <div class="acknowledgement">
+
+                <h3>Our Teachers, Our Inspiration</h3>
+
+                <p>
+                    This project would not have been possible without
+                    the guidance, encouragement and cooperation of
+                    our teachers.
+                </p>
+
+                <p>
+                    Their valuable suggestions, support and motivation
+                    helped us understand the concepts, develop our
+                    ideas and bring this project into practice.
+                </p>
+
+                <p>
+                    We sincerely express our gratitude to all the
+                    teachers who supported us throughout this
+                    learning journey.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT CREDITS -->
+
+        <section class="section">
+
+            <h2>Project Credits</h2>
+
+            <p class="section-description">
+                Every project has people and ideas behind it.
+                Here are the details of the people and institution
+                associated with this project.
+            </p>
+
+            <div class="credits">
+
+                <!-- REPLACE THE PLACEHOLDERS BELOW -->
+
+                <div class="credit-row">
+                    <span class="credit-label">Project Created By</span>
+                    <span class="credit-value placeholder">[Your Name]</span>
+                </div>
+
+                <div class="credit-row">
+                    <span class="credit-label">Project Guide</span>
+                    <span class="credit-value placeholder">[Teacher's Name]</span>
+                </div>
+
+                <div class="credit-row">
+                    <span class="credit-label">Additional Guidance</span>
+                    <span class="credit-value placeholder">[Teacher's Name]</span>
+                </div>
+
+                <div class="credit-row">
+                    <span class="credit-label">School</span>
+                    <span class="credit-value placeholder">[School Name]</span>
+                </div>
+
+                <div class="credit-row">
+                    <span class="credit-label">Class / Section</span>
+                    <span class="credit-value placeholder">[Class and Section]</span>
+                </div>
+
+                <div class="credit-row">
+                    <span class="credit-label">Presented At</span>
+                    <span class="credit-value">Science Exhibition 2026</span>
+                </div>
+
+                <div class="credit-row">
+                    <span class="credit-label">Academic Session</span>
+                    <span class="credit-value placeholder">[Academic Year]</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TECHNOLOGY -->
+
+        <section class="section">
+
+            <h2>Technology Behind AuthFlow</h2>
+
+            <p class="section-description">
+                This project uses a combination of web technologies
+                and development platforms.
+            </p>
+
+            <div class="tech-stack">
+                <span class="tech">HTML5</span>
+                <span class="tech">CSS3</span>
+                <span class="tech">JavaScript</span>
+                <span class="tech">Supabase</span>
+                <span class="tech">GitHub</span>
+                <span class="tech">Netlify</span>
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <p>
+                Built with curiosity, creativity and a passion
+                for learning.
+            </p>
+
+            <p>
+                <span class="footer-brand">AuthFlow</span>
+                — Your project, your flow.
+            </p>
+
+            <p>© 2026 AuthFlow. Educational Project.</p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+</body>
+</html>
