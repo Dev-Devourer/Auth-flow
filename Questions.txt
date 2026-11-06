@@ -1,0 +1,28 @@
+Prepare for questions from the judges
+
+Here are some questions worth practising:
+
+1. What is Supabase?
+Supabase is a backend platform that provides authentication, databases and other backend services. I use its authentication service in AuthFlow.
+
+2. What is GitHub?
+GitHub is a platform for storing, managing and collaborating on code using Git.
+
+3. What is Vercel?
+Vercel is a platform used to deploy and host websites.
+
+4. What is a truth table?
+A truth table shows every possible input combination and the corresponding output of a logic gate.
+
+5. Which gate is called a universal gate?
+Both NAND and NOR are universal gates because either one can be used to construct all basic logic gates.
+
+6. Why do computers use binary?
+Digital circuits can represent two distinct states, commonly represented as 0 and 1. Binary is a convenient way to represent those states.
+
+7. What does hexadecimal A represent?
+A represents decimal 10 in the hexadecimal number system.
+
+8. What is the difference between XOR and OR?
+OR gives 1 if at least one input is 1. XOR gives 1 only when the inputs are different.
+
