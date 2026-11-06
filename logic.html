@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore digital logic gates and convert binary, octal, decimal and hexadecimal numbers.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Logic Lab · AuthFlow</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/logic.js"></script>
+</head>
+<body data-page="logic">
+  <header class="topbar">
+    <div class="nav-left">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="siteSidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="" class="brand-logo"><span>AuthFlow</span></a>
+    </div>
+    <button class="icon-button" id="themeToggle" type="button" aria-label="Toggle theme">☾</button>
+  </header>
+  <button class="sidebar-overlay" id="sidebarOverlay" type="button" aria-label="Close navigation menu" tabindex="-1"></button>
+  <aside class="sidebar" id="siteSidebar" aria-label="Main navigation" aria-hidden="true" inert>
+    <div class="sidebar-heading"><span class="eyebrow">MENU</span><button class="sidebar-close" id="sidebarClose" type="button" aria-label="Close menu">×</button></div>
+    <nav class="sidebar-nav" aria-label="Site pages">
+      <span class="sidebar-label">NAVIGATION</span>
+      <a href="index.html"><span>↳</span> Sign in</a>
+      <a href="signup.html"><span>＋</span> Create account</a>
+      <a href="dashboard.html"><span>▦</span> Dashboard</a>
+      <a href="logic.html"><span>⌘</span> Logic Lab</a>
+      <span class="sidebar-label sidebar-label-spaced">EXPLORE</span>
+      <a href="#logicAbout"><span>ⓘ</span> About this page</a>
+      <a href="#numberConverter"><span>⇄</span> Number converter</a>
+      <a href="#logicContact"><span>✉</span> Contact</a>
+      <div class="sidebar-future"><span>◇</span><div><strong>More experiments</strong><small>Coming soon</small></div></div>
+    </nav>
+    <section class="sidebar-info" id="logicAbout"><span class="sidebar-label">ABOUT LOGIC LAB</span><p>An interactive learning page for basic digital logic gates and number systems used in computing.</p></section>
+    <section class="sidebar-info sidebar-contact" id="logicContact"><span class="sidebar-label">CONTACT</span><p>Add your exhibition contact details here when you are ready.</p><small>Email · GitHub · LinkedIn</small></section>
+    <div class="sidebar-bottom">AuthFlow <span>·</span> Your project, your flow.</div>
+  </aside>
+
+  <main class="logic-shell">
+    <section class="logic-hero">
+      <span class="eyebrow">INTERACTIVE LEARNING PROJECT</span>
+      <h1>Welcome to <span class="gradient-text">Logic Lab.</span></h1>
+      <p>Explore how computers make decisions using logic gates, then convert values between binary, octal, decimal and hexadecimal.</p>
+      <div class="logic-jump-links"><a href="#gateExplorer">Explore logic gates ↓</a><a href="#numberConverter">Try number conversion ↓</a></div>
+    </section>
+
+    <section class="logic-section" id="gateExplorer">
+      <div class="section-intro"><div><span class="eyebrow">PART 01 · DIGITAL ELECTRONICS</span><h2>Logic gate explorer</h2><p>Logic gates take binary inputs (0 or 1) and produce a binary output.</p></div><span class="section-chip">0 = OFF&nbsp;&nbsp; 1 = ON</span></div>
+
+      <article class="logic-simulator">
+        <div class="simulator-copy"><span class="eyebrow">TRY IT YOURSELF</span><h3>Live gate simulator</h3><p>Change the inputs and watch the output of every gate update instantly.</p></div>
+        <div class="input-switches">
+          <div class="binary-switch"><span>Input A</span><button type="button" class="bit-toggle" data-bit="A" aria-pressed="false">0</button></div>
+          <div class="binary-switch"><span>Input B</span><button type="button" class="bit-toggle" data-bit="B" aria-pressed="false">0</button></div>
+        </div>
+        <div class="simulator-results" id="simulatorResults" aria-live="polite">
+          <div><span>AND</span><strong data-output="AND">0</strong></div><div><span>OR</span><strong data-output="OR">0</strong></div>
+          <div><span>NOT A</span><strong data-output="NOT">1</strong></div><div><span>NAND</span><strong data-output="NAND">1</strong></div>
+          <div><span>NOR</span><strong data-output="NOR">1</strong></div><div><span>XOR</span><strong data-output="XOR">0</strong></div>
+          <div><span>XNOR</span><strong data-output="XNOR">1</strong></div>
+        </div>
+      </article>
+
+      <div class="gate-grid">
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">AND</span><span class="gate-equation">Y = A · B</span></div><h3>AND gate</h3><p>Output is 1 only when both inputs are 1.</p><div class="truth-table"><table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table></div></article>
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">OR</span><span class="gate-equation">Y = A + B</span></div><h3>OR gate</h3><p>Output is 1 when at least one input is 1.</p><div class="truth-table"><table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table></div></article>
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">NOT</span><span class="gate-equation">Y = Ā</span></div><h3>NOT gate</h3><p>It has one input and gives the opposite output.</p><div class="truth-table"><table><thead><tr><th>A</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td></tr></tbody></table></div></article>
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">NAND</span><span class="gate-equation">Y = (A · B)̅</span></div><h3>NAND gate</h3><p>It is the opposite of AND: output is 0 only when both inputs are 1.</p><div class="truth-table"><table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table></div></article>
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">NOR</span><span class="gate-equation">Y = (A + B)̅</span></div><h3>NOR gate</h3><p>It is the opposite of OR: output is 1 only when both inputs are 0.</p><div class="truth-table"><table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table></div></article>
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">XOR</span><span class="gate-equation">Y = A ⊕ B</span></div><h3>XOR gate</h3><p>Output is 1 when the two inputs are different.</p><div class="truth-table"><table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td></tr></tbody></table></div></article>
+        <article class="gate-card"><div class="gate-card-top"><span class="gate-symbol">XNOR</span><span class="gate-equation">Y = (A ⊕ B)̅</span></div><h3>XNOR gate</h3><p>It is the opposite of XOR: output is 1 when inputs are the same.</p><div class="truth-table"><table><thead><tr><th>A</th><th>B</th><th>Y</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table></div></article>
+      </div>
+      <p class="logic-note"><strong>Remember:</strong> NAND and NOR are called universal gates because combinations of either one can be used to build any basic logic function.</p>
+    </section>
+
+    <section class="logic-section converter-section" id="numberConverter">
+      <div class="section-intro"><div><span class="eyebrow">PART 02 · NUMBER SYSTEMS</span><h2>Number system converter</h2><p>Enter a number in one base to see its equivalent in the other three systems.</p></div><span class="section-chip">BASE 2 · 8 · 10 · 16</span></div>
+      <article class="converter-card">
+        <div class="converter-controls">
+          <div class="converter-field"><label for="numberInput">Enter your number</label><input id="numberInput" type="text" spellcheck="false" autocomplete="off" placeholder="For example: 1010"></div>
+          <div class="converter-field"><label for="fromBase">Input number system</label><select id="fromBase"><option value="2">Binary (base 2)</option><option value="8">Octal (base 8)</option><option value="10" selected>Decimal (base 10)</option><option value="16">Hexadecimal (base 16)</option></select></div>
+        </div>
+        <div id="conversionError" class="conversion-error" role="alert" hidden></div>
+        <div class="conversion-results" aria-live="polite">
+          <div class="conversion-result"><span>Binary <small>Base 2 · digits 0–1</small></span><strong id="binaryResult">—</strong><button type="button" data-copy="binaryResult" aria-label="Copy binary result">Copy</button></div>
+          <div class="conversion-result"><span>Octal <small>Base 8 · digits 0–7</small></span><strong id="octalResult">—</strong><button type="button" data-copy="octalResult" aria-label="Copy octal result">Copy</button></div>
+          <div class="conversion-result"><span>Decimal <small>Base 10 · digits 0–9</small></span><strong id="decimalResult">—</strong><button type="button" data-copy="decimalResult" aria-label="Copy decimal result">Copy</button></div>
+          <div class="conversion-result"><span>Hexadecimal <small>Base 16 · digits 0–9, A–F</small></span><strong id="hexResult">—</strong><button type="button" data-copy="hexResult" aria-label="Copy hexadecimal result">Copy</button></div>
+        </div>
+        <div class="converter-actions"><button type="button" class="outline-button" id="clearConverter">Clear</button><span>Supports whole numbers, including large values.</span></div>
+      </article>
+      <div class="base-explainer">
+        <div><strong>Binary</strong><p>Uses only 0 and 1. Computers represent data using binary states.</p></div>
+        <div><strong>Octal</strong><p>Base 8. Uses digits from 0 to 7.</p></div>
+        <div><strong>Decimal</strong><p>Base 10. The everyday number system, using 0 to 9.</p></div>
+        <div><strong>Hexadecimal</strong><p>Base 16. Uses 0 to 9 and A to F, where A means 10 and F means 15.</p></div>
+      </div>
+    </section>
+    <section class="logic-footer-card"><span class="eyebrow">KEEP EXPLORING</span><h2>Small building blocks. Big ideas.</h2><p>Logic gates are the foundation of digital circuits, and number systems help represent information inside computers.</p><a href="dashboard.html" class="logic-back-link">Back to dashboard →</a></section>
+  </main>
+  <footer class="footer">© <span data-year></span> AuthFlow · Logic Lab learning demo</footer>
+</body>
+</html>
