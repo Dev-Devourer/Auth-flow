@@ -34,7 +34,8 @@
   };
   // Basic format check: one @, a domain, and a dot after the @.
   // Supabase remains responsible for checking whether the account can authenticate.
-  const isValidEmail = value => /^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$/.test(value.trim());
+  const isValidEmail = value =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
   const setBusy = (button, busy, label) => {
     if (!button) return;
     button.disabled = busy;
