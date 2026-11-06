@@ -8,8 +8,8 @@
 */
 (() => {
   "use strict";
-  const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
-  const SUPABASE_PUBLISHABLE_KEY = "YOUR_SUPABASE_PUBLISHABLE_KEY";
+  const SUPABASE_URL = "https://yglsmwgrebqrovbqsisc.supabase.co";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_x-9APjz4cvq_GuLOuFCmVw_uIHN5LlH";
   const configured = SUPABASE_URL.startsWith("https://") &&
     !SUPABASE_URL.includes("YOUR_") && !SUPABASE_PUBLISHABLE_KEY.includes("YOUR_");
   const client = configured && window.supabase
