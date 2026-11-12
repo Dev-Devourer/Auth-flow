@@ -1,11 +1,6 @@
 # Science Exhibition Presentation – AuthFlow & Logic Lab
 
-**Good morning respected teachers, judges and everyone present here.**
-
-Today, I am going to present my project, which combines two interesting areas of computer science: web development and digital electronics.
-
-The name of my project is **AuthFlow and Logic Lab**.
-
+Good morning respected teachers and judges. My project is listed as Logic Gates and Authentication. I call it AuthFlow and Logic Lab. It combines web development with digital electronics.
 ## Part 1: AuthFlow – Authentication Website
 
 First, let me introduce AuthFlow.
@@ -13,15 +8,6 @@ First, let me introduce AuthFlow.
 AuthFlow is a website designed to demonstrate how user authentication works in modern websites.
 
 When we visit websites, we often need to create an account or log in before accessing certain features. AuthFlow demonstrates this process.
-
-My website includes:
-
-1. **Sign-up:** New users can create an account using their name, email address and password.
-2. **Email validation:** The website checks whether the email has a proper format, including an @ symbol and a dot in the domain.
-3. **Show and hide password:** Users can choose whether to display or hide their password while typing.
-4. **Login:** Existing users can sign in using their email and password.
-5. **Google authentication:** Users can also sign in using their Google account.
-6. **Forgot password:** Users can request a password reset link if they forget their password.
 
 For authentication, I have used **Supabase**. It manages user authentication, sessions and password recovery.
 
@@ -33,60 +19,25 @@ I have also added a hamburger menu in the top-left corner. It opens a sidebar co
 
 For designing this website, I used HTML, CSS and JavaScript.
 
-I plan to use GitHub to maintain my project code and Vercel to host the website online.
+My website is hosted live on Vercel, and I can show it to you right now.
 
 ## Part 2: Logic Lab – Digital Logic and Number Systems
 
-Now, moving to the second part of my project.
+Now, Logic Lab. Every computer, phone and calculator runs on one idea: 0 and 1. Logic gates are the tiny decision-makers that work with those two values.
 
-Logic Lab is an educational section where we can understand the basics of digital electronics and number systems interactively.
+There are seven gates. I group them in three sets:
 
-Let us first understand logic gates.
+First, the basic three: AND, OR, NOT.
+AND needs both inputs to be 1. OR needs at least one. NOT simply flips the input.
 
-Logic gates are the basic building blocks of digital electronic circuits. They perform logical operations using binary inputs, which are represented by 0 and 1.
+Second, their opposites: NAND and NOR.
+NAND is AND flipped. NOR is OR flipped.
 
-There are seven basic gates demonstrated in my project:
+Third, the comparers: XOR and XNOR.
+XOR gives 1 when the inputs are different. XNOR gives 1 when they are the same.
 
-- **AND Gate:** The output is 1 only when both inputs are 1.
-- **OR Gate:** The output is 1 when at least one input is 1.
-- **NOT Gate:** It reverses the input. If the input is 0, the output is 1, and vice versa.
-- **NAND Gate:** It gives the opposite output of an AND gate.
-- **NOR Gate:** It gives the opposite output of an OR gate.
-- **XOR Gate:** Its output is 1 when the two inputs are different.
-- **XNOR Gate:** Its output is 1 when both inputs are the same.
+My project has a truth table for each gate and a live simulator. (Demo: click A = 1, B = 0 and say what changes.) You can see all seven gates react at once.
 
-I have included truth tables for these gates.
+Number systems. Computers think in binary, but humans use other systems too. My converter handles binary, octal, decimal and hexadecimal. For example, 45 in decimal is 101101 in binary, 55 in octal and 2D in hexadecimal. (Demo: type 45 and show the other three.)
 
-There is also an interactive simulator where we can change two inputs, A and B, between 0 and 1 and observe how the outputs of the different gates change.
-
-Now, let us move to number systems.
-
-Computers use binary numbers to represent and process information. However, we also use other number systems to represent numbers in different ways.
-
-My converter demonstrates four number systems:
-
-1. **Binary:** Base 2, using digits 0 and 1.
-2. **Octal:** Base 8, using digits 0 to 7.
-3. **Decimal:** Base 10, using digits 0 to 9.
-4. **Hexadecimal:** Base 16, using digits 0 to 9 and letters A to F.
-
-For example, the decimal number 45 can be represented as:
-
-- Binary: 101101
-- Octal: 55
-- Decimal: 45
-- Hexadecimal: 2D
-
-In my project, we can enter a number, select its original number system and instantly get its equivalent in the other three systems.
-
-This makes understanding and practising number conversion easier.
-
-## Conclusion
-
-Through these two projects, I wanted to combine practical web development with important computer science concepts.
-
-AuthFlow demonstrates how websites manage user authentication, while Logic Lab demonstrates the fundamentals of digital logic and number systems.
-
-I hope my project helps everyone understand these concepts in a more interactive and interesting way.
-
-**Thank you!**
+To sum up: AuthFlow shows how websites keep users secure. Logic Lab shows how computers think. Thank you!
