@@ -80,7 +80,12 @@
       <div class="section-intro"><div><span class="eyebrow">PART 02 · NUMBER SYSTEMS</span><h2>Number system converter</h2><p>Enter a number in one base to see its equivalent in the other three systems.</p></div><span class="section-chip">BASE 2 · 8 · 10 · 16</span></div>
       <article class="converter-card">
         <div class="converter-controls">
-          <div class="converter-field"><label for="numberInput">Enter your number</label><input id="numberInput" type="text" spellcheck="false" autocomplete="off" placeholder="For example: 1010"></div>
+          <div class="converter-field"><label for="numberInput">Enter your number</label><input
+                id="numberInput"
+                 type="text"
+                spellcheck="false"
+                autocomplete="off"
+                placeholder="For example: 1010.101 or 10.12"></div>
           <div class="converter-field"><label for="fromBase">Input number system</label><select id="fromBase"><option value="2">Binary (base 2)</option><option value="8">Octal (base 8)</option><option value="10" selected>Decimal (base 10)</option><option value="16">Hexadecimal (base 16)</option></select></div>
         </div>
         <div id="conversionError" class="conversion-error" role="alert" hidden></div>
@@ -90,7 +95,17 @@
           <div class="conversion-result"><span>Decimal <small>Base 10 · digits 0–9</small></span><strong id="decimalResult">—</strong><button type="button" data-copy="decimalResult" aria-label="Copy decimal result">Copy</button></div>
           <div class="conversion-result"><span>Hexadecimal <small>Base 16 · digits 0–9, A–F</small></span><strong id="hexResult">—</strong><button type="button" data-copy="hexResult" aria-label="Copy hexadecimal result">Copy</button></div>
         </div>
-        <div class="converter-actions"><button type="button" class="outline-button" id="clearConverter">Clear</button><span>Supports whole numbers, including large values.</span></div>
+       <div class="converter-actions">
+                <button type="button" class="outline-button" id="clearConverter">
+                      Clear
+                  </button>
+
+                <span>
+                  Supports whole and fractional numbers.
+                  Long fractional results display up to 16 digits.
+                  An ellipsis (…) indicates additional digits.
+                </span>
+              </div>
       </article>
       <div class="base-explainer">
         <div><strong>Binary</strong><p>Uses only 0 and 1. Computers represent data using binary states.</p></div>
